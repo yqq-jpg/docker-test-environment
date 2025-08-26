@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student-Teacher Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Student-Teacher Portal</h1>
+  </header>
+  
+  <div class="nav">
+    <div>
+      <a href="#" id="home-link">Home</a>
+    </div>
+    <div id="auth-links">
+      <a href="#" id="login-link">Login</a>
+      <a href="#" id="register-link">Register</a>
+    </div>
+    <div id="user-links" class="hidden">
+      <span id="username-display"></span>
+      <a href="#" id="logout-link">Logout</a>
+    </div>
+  </div>
+  
+  <div class="container">
+    <div id="home-section">
+      <h2>Welcome to Student-Teacher Portal</h2>
+      <p>Please login to access the portal. If you don't have an account, please register.</p>
+    </div>
+    
+    <div id="login-section" class="auth-container hidden">
+      <h2>Login</h2>
+      <form id="login-form">
+        <div class="form-group">
+          <label for="login-username">Username:</label>
+          <input type="text" id="login-username" required>
+        </div>
+        <div class="form-group">
+          <label for="login-password">Password:</label>
+          <input type="password" id="login-password" required>
+        </div>
+        <button type="submit">Login</button>
+      </form>
+    </div>
+    
+    <div id="register-section" class="auth-container hidden">
+      <h2>Register</h2>
+      <form id="register-form">
+        <div class="form-group">
+          <label for="register-username">Username:</label>
+          <input type="text" id="register-username" required>
+        </div>
+        <div class="form-group">
+          <label for="register-password">Password:</label>
+          <input type="password" id="register-password" required>
+        </div>
+        <div class="form-group">
+          <label for="register-email">Email:</label>
+          <input type="email" id="register-email">
+        </div>
+        <div class="form-group">
+          <label for="register-role">Role:</label>
+          <select id="register-role" required>
+            <option value="student">Student</option>
+            <option value="teacher">Teacher</option>
+          </select>
+        </div>
+        <button type="submit">Register</button>
+      </form>
+    </div>
+    
+    <div id="student-section" class="hidden">
+      <h2>Student Dashboard</h2>
+      
+      <div>
+        <h3>Available Courses</h3>
+        <div id="available-courses" class="course-list"></div>
+      </div>
+      
+      <div>
+        <h3>My Enrollments</h3>
+        <table class="enrollment-list">
+          <thead>
+            <tr>
+              <th>Course Name</th>
+              <th>Teacher</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="student-enrollments"></tbody>
+        </table>
+      </div>
+    </div>
+    
+    <div id="teacher-section" class="hidden">
+      <h2>Teacher Dashboard</h2>
+      
+      <div>
+        <h3>Create Course</h3>
+        <form id="create-course-form">
+          <div class="form-group">
+            <label for="course-name">Course Name:</label>
+            <input type="text" id="course-name" required>
+          </div>
+          <div class="form-group">
+            <label for="course-description">Description:</label>
+            <textarea id="course-description" rows="4"></textarea>
+          </div>
+          <button type="submit">Create Course</button>
+        </form>
+      </div>
+      
+      <div>
+        <h3>My Courses</h3>
+        <div id="teacher-courses" class="course-list"></div>
+      </div>
+      
+      <div id="course-enrollments-section" class="hidden">
+        <h3>Course Enrollments: <span id="selected-course-name"></span></h3>
+        <table class="enrollment-list">
+          <thead>
+            <tr>
+              <th>Student</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="course-enrollments"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>

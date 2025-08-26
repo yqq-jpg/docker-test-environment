@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docker测试环境</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .service-card {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .service-card h3 {
+            margin-top: 0;
+            color: #fff;
+        }
+        .status {
+            color: #4ade80;
+            font-weight: bold;
+        }
+        .connection-info {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-family: monospace;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🐳 Docker 测试环境成功启动！</h1>
+        
+        <p style="text-align: center; font-size: 18px;">
+            恭喜！你的Docker测试环境已经成功搭建并运行。
+        </p>
+
+        <div class="service-grid">
+            <div class="service-card">
+                <h3>🗄️ MySQL数据库</h3>
+                <p class="status">✅ 运行中</p>
+                <div class="connection-info">
+                    主机: localhost<br>
+                    端口: 3306<br>
+                    用户: testuser<br>
+                    密码: test123<br>
+                    数据库: testdb
+                </div>
+            </div>
+
+            <div class="service-card">
+                <h3>🚀 Redis缓存</h3>
+                <p class="status">✅ 运行中</p>
+                <div class="connection-info">
+                    主机: localhost<br>
+                    端口: 6379<br>
+                    密码: redis123
+                </div>
+            </div>
+
+            <div class="service-card">
+                <h3>🍃 MongoDB</h3>
+                <p class="status">✅ 运行中</p>
+                <div class="connection-info">
+                    主机: localhost<br>
+                    端口: 27017<br>
+                    用户: admin<br>
+                    密码: admin123
+                </div>
+            </div>
+
+            <div class="service-card">
+                <h3>🐘 PostgreSQL</h3>
+                <p class="status">✅ 运行中</p>
+                <div class="connection-info">
+                    主机: localhost<br>
+                    端口: 5432<br>
+                    用户: testuser<br>
+                    密码: test123<br>
+                    数据库: testdb
+                </div>
+            </div>
+
+            <div class="service-card">
+                <h3>🌐 Nginx Web服务器</h3>
+                <p class="status">✅ 运行中</p>
+                <div class="connection-info">
+                    HTTP: http://localhost:80<br>
+                    备用: http://localhost:8080
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 30px; text-align: center; background: rgba(0, 0, 0, 0.3); padding: 15px; border-radius: 10px;">
+            <h3>📝 常用管理命令</h3>
+            <div style="font-family: monospace; text-align: left;">
+                查看运行状态: <code>docker-compose ps</code><br>
+                查看日志: <code>docker-compose logs</code><br>
+                停止所有服务: <code>docker-compose down</code><br>
+                重启服务: <code>docker-compose restart</code>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 添加一些动态效果
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.service-card');
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    card.style.transition = 'all 0.5s ease';
+                    
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 100);
+                }, index * 100);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+# 基础测试环境 - 适合Docker初学者
+version: '3.8'
+
+services:
+  # 数据库服务
+  mysql:
+    image: mysql:8.0
+    container_name: test-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: web3
+      MYSQL_USER: testuser
+      MYSQL_PASSWORD: test123
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./init-scripts:/docker-entrypoint-initdb.d:ro  # 改成 init-scripts
+    networks:
+      - test-network
+
+
+  # Web服务器
+  nginx:
+    image: nginx:1.21
+    container_name: test-nginx
+    ports:
+      - "80:80"
+      - "8080:8080"
+    volumes:
+      - ./web-content:/usr/share/nginx/html
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - mysql
+    networks:
+      - test-network
+
+# 添加你的Node.js应用
+  nodejs-app:
+    image: node:18-alpine
+    container_name: student-course-app
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./applications/nodejs-app:/app
+    working_dir: /app
+    command: sh -c "npm install && npm start"
+    depends_on:
+      - mysql
+    networks:
+      - test-network
+    environment:
+      - NODE_ENV=development
+      - DB_HOST=mysql
+      - DB_USER=testuser
+      - DB_PASSWORD=test123
+      - DB_NAME=web3
+
+  # Redis缓存
+  redis:
+    image: redis:7-alpine
+    container_name: test-redis
+    ports:
+      - "6379:6379"
+    command: redis-server --requirepass redis123
+    networks:
+      - test-network
+
+  # MongoDB数据库
+  mongodb:
+    image: mongo:5.0
+    container_name: test-mongodb
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin123
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - test-network
+
+  # PostgreSQL数据库
+  postgres:
+    image: postgres:14
+    container_name: test-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: testdb
+      POSTGRES_USER: testuser
+      POSTGRES_PASSWORD: test123
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - test-network
+
+# 数据卷定义
+volumes:
+  mysql_data:
+  mongodb_data:
+  postgres_data:
+
+# 网络定义
+networks:
+  test-network:
+    driver: bridge

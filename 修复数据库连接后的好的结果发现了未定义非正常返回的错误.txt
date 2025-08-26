@@ -1,0 +1,117 @@
+E:\test_environment\applications\nodejs-app>npm run test:no-e2e
+
+> web3hw@1.0.0 test:no-e2e
+> cross-env NODE_ENV=test jest --testPathIgnorePatterns=e2e --detectOpenHandles --forceExit
+
+ PASS  tests/basic.test.js
+  ● Console
+
+    console.log
+      尝试连接数据库: { host: 'localhost', user: 'testuser', database: 'web3', port: 3306 }
+
+      at Object.log (tests/setup.js:22:17)
+
+    console.log
+      测试数据库连接成功
+
+      at Object.log (tests/setup.js:34:17)
+
+    console.log
+      测试环境清理完成
+
+      at Object.log (tests/setup.js:47:17)
+
+    console.log
+      测试数据库连接已关闭
+
+      at Object.log (tests/setup.js:76:21)
+
+ FAIL  tests/integration/api.test.js
+  ● Console
+
+    console.log
+      尝试连接数据库: { host: 'localhost', user: 'testuser', database: 'web3', port: 3306 }
+
+      at Object.log (tests/setup.js:22:17)
+
+    console.log
+      测试数据库连接成功
+
+      at Object.log (tests/setup.js:34:17)
+
+    console.log
+      测试环境清理完成
+
+      at Object.log (tests/setup.js:47:17)
+
+    console.log
+      测试数据库连接已关闭
+
+      at Object.log (tests/setup.js:76:21)
+
+  ● API集成测试 › 错误处理 › 应该正确处理不存在的路由
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 404
+    Received:    200
+
+      242 |                 .set('Authorization', `Bearer ${studentToken}`);
+      243 |
+    > 244 |             expect(response.status).toBeGreaterThanOrEqual(404);
+          |                                     ^
+      245 |         });
+      246 |
+      247 |         test('应该正确处理无效的JSON数据', async () => {
+
+      at Object.toBeGreaterThanOrEqual (tests/integration/api.test.js:244:37)
+
+ PASS  tests/unit/auth.test.js
+  ● Console
+
+    console.log
+      尝试连接数据库: { host: 'localhost', user: 'testuser', database: 'web3', port: 3306 }
+
+      at Object.log (tests/setup.js:22:17)
+
+    console.log
+      测试数据库连接成功
+
+      at Object.log (tests/setup.js:34:17)
+
+    console.log
+      测试环境清理完成
+
+      at Object.log (tests/setup.js:47:17)
+
+    console.log
+      测试数据库连接已关闭
+
+      at Object.log (tests/setup.js:76:21)
+
+
+Test Suites: 1 failed, 2 passed, 3 total
+Tests:       1 failed, 38 passed, 39 total
+Snapshots:   0 total
+Time:        3.168 s, estimated 11 s
+Ran all test suites.
+
+Jest has detected the following 1 open handle potentially keeping Jest from exiting:
+
+  ●  bound-anonymous-fn
+
+      45 |             // 1. 注册学生
+      46 |             await request(app)
+    > 47 |                 .post('/api/register')
+         |                  ^
+      48 |                 .send(studentUser)
+      49 |                 .expect(201);
+      50 |
+
+      at Test.serverAddress (node_modules/supertest/lib/test.js:63:35)
+      at new Test (node_modules/supertest/lib/test.js:49:14)
+      at Object.obj.<computed> [as post] (node_modules/supertest/index.js:39:18)
+      at Object.post (tests/basic.test.js:47:18)
+
+
+E:\test_environment\applications\nodejs-app>

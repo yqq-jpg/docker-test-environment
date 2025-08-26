@@ -1,0 +1,911 @@
+Microsoft Windows [版本 10.0.19045.6216]
+(c) Microsoft Corporation。保留所有权利。
+
+E:\test_environment>cd E:\test_environment\applications\nodejs-app
+
+E:\test_environment\applications\nodejs-app>npm test
+
+> web3hw@1.0.0 test
+> jest --detectOpenHandles --forceExit
+
+ FAIL  tests/basic.test.js (10.729 s)
+  ● Console
+
+    console.log
+      测试数据库连接成功
+
+      at Object.log (tests/setup.js:22:17)
+
+    console.log
+      测试环境清理完成
+
+      at Object.log (tests/setup.js:35:17)
+
+    console.error
+      Error: getaddrinfo ENOTFOUND mysql
+          at PromisePool.execute (E:\test_environment\applications\nodejs-app\node_modules\mysql2\lib\promise\pool.js:54:22)
+          at Object.execute [as query] (E:\test_environment\applications\nodejs-app\backend\db.js:9:43)
+          at query (E:\test_environment\applications\nodejs-app\backend\controllers.js:8:32)
+          at Layer.handleRequest (E:\test_environment\applications\nodejs-app\node_modules\router\lib\layer.js:152:17)
+          at next (E:\test_environment\applications\nodejs-app\node_modules\router\lib\route.js:157:13)
+          at Route.dispatch (E:\test_environment\applications\nodejs-app\node_modules\router\lib\route.js:117:3)
+          at handle (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:435:11)
+          at Layer.handleRequest (E:\test_environment\applications\nodejs-app\node_modules\router\lib\layer.js:152:17)
+          at E:\test_environment\applications\nodejs-app\node_modules\router\index.js:295:15
+          at processParams (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:582:12)
+          at next (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:291:5)
+          at Function.handle (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:186:3)
+          at router (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:60:12)
+          at Layer.handleRequest (E:\test_environment\applications\nodejs-app\node_modules\router\lib\layer.js:152:17)
+          at trimPrefix (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:342:13)
+          at E:\test_environment\applications\nodejs-app\node_modules\router\index.js:297:9
+          at processParams (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:582:12)
+          at next (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:291:5)
+          at serveStatic (E:\test_environment\applications\nodejs-app\node_modules\serve-static\index.js:74:16)
+          at Layer.handleRequest (E:\test_environment\applications\nodejs-app\node_modules\router\lib\layer.js:152:17)
+          at trimPrefix (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:342:13)
+          at E:\test_environment\applications\nodejs-app\node_modules\router\index.js:297:9
+          at processParams (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:582:12)
+          at next (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:291:5)
+          at urlencodedParser (E:\test_environment\applications\nodejs-app\node_modules\body-parser\lib\types\urlencoded.js:57:7)
+          at Layer.handleRequest (E:\test_environment\applications\nodejs-app\node_modules\router\lib\layer.js:152:17)
+          at trimPrefix (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:342:13)
+          at E:\test_environment\applications\nodejs-app\node_modules\router\index.js:297:9
+          at processParams (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:582:12)
+          at next (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:291:5)
+          at E:\test_environment\applications\nodejs-app\node_modules\body-parser\lib\read.js:132:5
+          at AsyncResource.runInAsyncScope (node:async_hooks:211:14)
+          at invokeCallback (E:\test_environment\applications\nodejs-app\node_modules\raw-body\index.js:238:16)
+          at done (E:\test_environment\applications\nodejs-app\node_modules\raw-body\index.js:227:7)
+          at IncomingMessage.onEnd (E:\test_environment\applications\nodejs-app\node_modules\raw-body\index.js:287:7)
+          at IncomingMessage.emit (node:events:518:28)
+          at endReadableNT (node:internal/streams/readable:1698:12)
+          at processTicksAndRejections (node:internal/process/task_queues:90:21) {
+        code: 'ENOTFOUND',
+        errno: -3008,
+        sql: undefined,
+        sqlState: undefined,
+        sqlMessage: undefined
+      }
+
+      20 |         res.status(201).send({ message: 'User registered successfully!' });
+      21 |     } catch (error) {
+    > 22 |         console.error(error);
+         |                 ^
+      23 |         res.status(500).send({ message: 'Server error' });
+      24 |     }
+      25 | }
+
+      at error (backend/controllers.js:22:17)
+
+    console.error
+      Error: getaddrinfo ENOTFOUND mysql
+          at PromisePool.execute (E:\test_environment\applications\nodejs-app\node_modules\mysql2\lib\promise\pool.js:54:22)
+          at Object.execute [as query] (E:\test_environment\applications\nodejs-app\backend\db.js:9:43)
+          at query (E:\test_environment\applications\nodejs-app\backend\controllers.js:8:32)
+          at Layer.handleRequest (E:\test_environment\applications\nodejs-app\node_modules\router\lib\layer.js:152:17)
+          at next (E:\test_environment\applications\nodejs-app\node_modules\router\lib\route.js:157:13)
+          at Route.dispatch (E:\test_environment\applications\nodejs-app\node_modules\router\lib\route.js:117:3)
+          at handle (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:435:11)
+          at Layer.handleRequest (E:\test_environment\applications\nodejs-app\node_modules\router\lib\layer.js:152:17)
+          at E:\test_environment\applications\nodejs-app\node_modules\router\index.js:295:15
+          at processParams (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:582:12)
+          at next (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:291:5)
+          at Function.handle (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:186:3)
+          at router (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:60:12)
+          at Layer.handleRequest (E:\test_environment\applications\nodejs-app\node_modules\router\lib\layer.js:152:17)
+          at trimPrefix (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:342:13)
+          at E:\test_environment\applications\nodejs-app\node_modules\router\index.js:297:9
+          at processParams (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:582:12)
+          at next (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:291:5)
+          at serveStatic (E:\test_environment\applications\nodejs-app\node_modules\serve-static\index.js:74:16)
+          at Layer.handleRequest (E:\test_environment\applications\nodejs-app\node_modules\router\lib\layer.js:152:17)
+          at trimPrefix (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:342:13)
+          at E:\test_environment\applications\nodejs-app\node_modules\router\index.js:297:9
+          at processParams (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:582:12)
+          at next (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:291:5)
+          at urlencodedParser (E:\test_environment\applications\nodejs-app\node_modules\body-parser\lib\types\urlencoded.js:57:7)
+          at Layer.handleRequest (E:\test_environment\applications\nodejs-app\node_modules\router\lib\layer.js:152:17)
+          at trimPrefix (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:342:13)
+          at E:\test_environment\applications\nodejs-app\node_modules\router\index.js:297:9
+          at processParams (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:582:12)
+          at next (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:291:5)
+          at E:\test_environment\applications\nodejs-app\node_modules\body-parser\lib\read.js:132:5
+          at AsyncResource.runInAsyncScope (node:async_hooks:211:14)
+          at invokeCallback (E:\test_environment\applications\nodejs-app\node_modules\raw-body\index.js:238:16)
+          at done (E:\test_environment\applications\nodejs-app\node_modules\raw-body\index.js:227:7)
+          at IncomingMessage.onEnd (E:\test_environment\applications\nodejs-app\node_modules\raw-body\index.js:287:7)
+          at IncomingMessage.emit (node:events:518:28)
+          at endReadableNT (node:internal/streams/readable:1698:12)
+          at processTicksAndRejections (node:internal/process/task_queues:90:21) {
+        code: 'ENOTFOUND',
+        errno: -3008,
+        sql: undefined,
+        sqlState: undefined,
+        sqlMessage: undefined
+      }
+
+      20 |         res.status(201).send({ message: 'User registered successfully!' });
+      21 |     } catch (error) {
+    > 22 |         console.error(error);
+         |                 ^
+      23 |         res.status(500).send({ message: 'Server error' });
+      24 |     }
+      25 | }
+
+      at error (backend/controllers.js:22:17)
+
+    console.error
+      Error: getaddrinfo ENOTFOUND mysql
+          at PromisePool.execute (E:\test_environment\applications\nodejs-app\node_modules\mysql2\lib\promise\pool.js:54:22)
+          at Object.execute [as query] (E:\test_environment\applications\nodejs-app\backend\db.js:9:43)
+          at query (E:\test_environment\applications\nodejs-app\backend\controllers.js:8:32)
+          at Layer.handleRequest (E:\test_environment\applications\nodejs-app\node_modules\router\lib\layer.js:152:17)
+          at next (E:\test_environment\applications\nodejs-app\node_modules\router\lib\route.js:157:13)
+          at Route.dispatch (E:\test_environment\applications\nodejs-app\node_modules\router\lib\route.js:117:3)
+          at handle (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:435:11)
+          at Layer.handleRequest (E:\test_environment\applications\nodejs-app\node_modules\router\lib\layer.js:152:17)
+          at E:\test_environment\applications\nodejs-app\node_modules\router\index.js:295:15
+          at processParams (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:582:12)
+          at next (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:291:5)
+          at Function.handle (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:186:3)
+          at router (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:60:12)
+          at Layer.handleRequest (E:\test_environment\applications\nodejs-app\node_modules\router\lib\layer.js:152:17)
+          at trimPrefix (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:342:13)
+          at E:\test_environment\applications\nodejs-app\node_modules\router\index.js:297:9
+          at processParams (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:582:12)
+          at next (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:291:5)
+          at serveStatic (E:\test_environment\applications\nodejs-app\node_modules\serve-static\index.js:74:16)
+          at Layer.handleRequest (E:\test_environment\applications\nodejs-app\node_modules\router\lib\layer.js:152:17)
+          at trimPrefix (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:342:13)
+          at E:\test_environment\applications\nodejs-app\node_modules\router\index.js:297:9
+          at processParams (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:582:12)
+          at next (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:291:5)
+          at urlencodedParser (E:\test_environment\applications\nodejs-app\node_modules\body-parser\lib\types\urlencoded.js:57:7)
+          at Layer.handleRequest (E:\test_environment\applications\nodejs-app\node_modules\router\lib\layer.js:152:17)
+          at trimPrefix (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:342:13)
+          at E:\test_environment\applications\nodejs-app\node_modules\router\index.js:297:9
+          at processParams (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:582:12)
+          at next (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:291:5)
+          at E:\test_environment\applications\nodejs-app\node_modules\body-parser\lib\read.js:132:5
+          at AsyncResource.runInAsyncScope (node:async_hooks:211:14)
+          at invokeCallback (E:\test_environment\applications\nodejs-app\node_modules\raw-body\index.js:238:16)
+          at done (E:\test_environment\applications\nodejs-app\node_modules\raw-body\index.js:227:7)
+          at IncomingMessage.onEnd (E:\test_environment\applications\nodejs-app\node_modules\raw-body\index.js:287:7)
+          at IncomingMessage.emit (node:events:518:28)
+          at endReadableNT (node:internal/streams/readable:1698:12)
+          at processTicksAndRejections (node:internal/process/task_queues:90:21) {
+        code: 'ENOTFOUND',
+        errno: -3008,
+        sql: undefined,
+        sqlState: undefined,
+        sqlMessage: undefined
+      }
+
+      20 |         res.status(201).send({ message: 'User registered successfully!' });
+      21 |     } catch (error) {
+    > 22 |         console.error(error);
+         |                 ^
+      23 |         res.status(500).send({ message: 'Server error' });
+      24 |     }
+      25 | }
+
+      at error (backend/controllers.js:22:17)
+
+    console.error
+      Error: getaddrinfo ENOTFOUND mysql
+          at PromisePool.execute (E:\test_environment\applications\nodejs-app\node_modules\mysql2\lib\promise\pool.js:54:22)
+          at Object.execute [as query] (E:\test_environment\applications\nodejs-app\backend\db.js:9:43)
+          at query (E:\test_environment\applications\nodejs-app\backend\controllers.js:31:32)
+          at Layer.handleRequest (E:\test_environment\applications\nodejs-app\node_modules\router\lib\layer.js:152:17)
+          at next (E:\test_environment\applications\nodejs-app\node_modules\router\lib\route.js:157:13)
+          at Route.dispatch (E:\test_environment\applications\nodejs-app\node_modules\router\lib\route.js:117:3)
+          at handle (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:435:11)
+          at Layer.handleRequest (E:\test_environment\applications\nodejs-app\node_modules\router\lib\layer.js:152:17)
+          at E:\test_environment\applications\nodejs-app\node_modules\router\index.js:295:15
+          at processParams (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:582:12)
+          at next (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:291:5)
+          at Function.handle (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:186:3)
+          at router (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:60:12)
+          at Layer.handleRequest (E:\test_environment\applications\nodejs-app\node_modules\router\lib\layer.js:152:17)
+          at trimPrefix (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:342:13)
+          at E:\test_environment\applications\nodejs-app\node_modules\router\index.js:297:9
+          at processParams (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:582:12)
+          at next (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:291:5)
+          at serveStatic (E:\test_environment\applications\nodejs-app\node_modules\serve-static\index.js:74:16)
+          at Layer.handleRequest (E:\test_environment\applications\nodejs-app\node_modules\router\lib\layer.js:152:17)
+          at trimPrefix (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:342:13)
+          at E:\test_environment\applications\nodejs-app\node_modules\router\index.js:297:9
+          at processParams (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:582:12)
+          at next (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:291:5)
+          at urlencodedParser (E:\test_environment\applications\nodejs-app\node_modules\body-parser\lib\types\urlencoded.js:57:7)
+          at Layer.handleRequest (E:\test_environment\applications\nodejs-app\node_modules\router\lib\layer.js:152:17)
+          at trimPrefix (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:342:13)
+          at E:\test_environment\applications\nodejs-app\node_modules\router\index.js:297:9
+          at processParams (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:582:12)
+          at next (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:291:5)
+          at E:\test_environment\applications\nodejs-app\node_modules\body-parser\lib\read.js:132:5
+          at AsyncResource.runInAsyncScope (node:async_hooks:211:14)
+          at invokeCallback (E:\test_environment\applications\nodejs-app\node_modules\raw-body\index.js:238:16)
+          at done (E:\test_environment\applications\nodejs-app\node_modules\raw-body\index.js:227:7)
+          at IncomingMessage.onEnd (E:\test_environment\applications\nodejs-app\node_modules\raw-body\index.js:287:7)
+          at IncomingMessage.emit (node:events:518:28)
+          at endReadableNT (node:internal/streams/readable:1698:12)
+          at processTicksAndRejections (node:internal/process/task_queues:90:21) {
+        code: 'ENOTFOUND',
+        errno: -3008,
+        sql: undefined,
+        sqlState: undefined,
+        sqlMessage: undefined
+      }
+
+      50 |         });
+      51 |     } catch (error) {
+    > 52 |         console.error(error);
+         |                 ^
+      53 |         res.status(500).send({ message: 'Server error' });
+      54 |     }
+      55 | }
+
+      at error (backend/controllers.js:52:17)
+
+    console.log
+      测试数据库连接已关闭
+
+      at Object.log (tests/setup.js:57:21)
+
+  ● 学生教师门户基础测试 › 用户注册登录流程 › 学生注册 -> 登录 -> 获取信息流程
+
+    expected 201 "Created", got 500 "Internal Server Error"
+
+      47 |                 .post('/api/register')
+      48 |                 .send(studentUser)
+    > 49 |                 .expect(201);
+         |                  ^
+      50 |
+      51 |             // 2. 登录学生
+      52 |             const loginResponse = await request(app)
+
+      at Object.expect (tests/basic.test.js:49:18)
+      ----
+      at Test._assertStatus (node_modules/supertest/lib/test.js:309:14)
+      at node_modules/supertest/lib/test.js:365:13
+      at Test._assertFunction (node_modules/supertest/lib/test.js:342:13)
+      at Test.assert (node_modules/supertest/lib/test.js:195:23)
+      at localAssert (node_modules/supertest/lib/test.js:138:14)
+      at Server.<anonymous> (node_modules/supertest/lib/test.js:152:11)
+
+  ● 学生教师门户基础测试 › 用户注册登录流程 › 教师注册 -> 登录 -> 创建课程流程
+
+    expected 201 "Created", got 500 "Internal Server Error"
+
+      76 |                 .post('/api/register')
+      77 |                 .send(teacherUser)
+    > 78 |                 .expect(201);
+         |                  ^
+      79 |
+      80 |             // 2. 登录教师
+      81 |             const loginResponse = await request(app)
+
+      at Object.expect (tests/basic.test.js:78:18)
+      ----
+      at Test._assertStatus (node_modules/supertest/lib/test.js:309:14)
+      at node_modules/supertest/lib/test.js:365:13
+      at Test._assertFunction (node_modules/supertest/lib/test.js:342:13)
+      at Test.assert (node_modules/supertest/lib/test.js:195:23)
+      at localAssert (node_modules/supertest/lib/test.js:138:14)
+      at Server.<anonymous> (node_modules/supertest/lib/test.js:152:11)
+
+  ● 学生教师门户基础测试 › 用户注册登录流程 › 应该拒绝重复用户名
+
+    expected 400 "Bad Request", got 500 "Internal Server Error"
+
+      109 |                 .post('/api/register')
+      110 |                 .send(studentUser)
+    > 111 |                 .expect(400);
+          |                  ^
+      112 |
+      113 |             expect(response.body.message).toBe('Username already exists!');
+      114 |         });
+
+      at Object.expect (tests/basic.test.js:111:18)
+      ----
+      at Test._assertStatus (node_modules/supertest/lib/test.js:309:14)
+      at node_modules/supertest/lib/test.js:365:13
+      at Test._assertFunction (node_modules/supertest/lib/test.js:342:13)
+      at Test.assert (node_modules/supertest/lib/test.js:195:23)
+      at localAssert (node_modules/supertest/lib/test.js:138:14)
+      at Server.<anonymous> (node_modules/supertest/lib/test.js:152:11)
+
+  ● 学生教师门户基础测试 › 用户注册登录流程 › 应该拒绝错误密码
+
+    expected 401 "Unauthorized", got 500 "Internal Server Error"
+
+      121 |                     password: 'wrongpassword'
+      122 |                 })
+    > 123 |                 .expect(401);
+          |                  ^
+      124 |
+      125 |             expect(response.body.message).toBe('Invalid password!');
+      126 |         });
+
+      at Object.expect (tests/basic.test.js:123:18)
+      ----
+      at Test._assertStatus (node_modules/supertest/lib/test.js:309:14)
+      at node_modules/supertest/lib/test.js:365:13
+      at Test._assertFunction (node_modules/supertest/lib/test.js:342:13)
+      at Test.assert (node_modules/supertest/lib/test.js:195:23)
+      at localAssert (node_modules/supertest/lib/test.js:138:14)
+      at Server.<anonymous> (node_modules/supertest/lib/test.js:152:11)
+
+  ● 学生教师门户基础测试 › 课程管理测试 › 学生应该能查看课程列表
+
+    expected 200 "OK", got 401 "Unauthorized"
+
+      132 |                 .get('/api/courses')
+      133 |                 .set('Authorization', `Bearer ${studentToken}`)
+    > 134 |                 .expect(200);
+          |                  ^
+      135 |
+      136 |             expect(Array.isArray(response.body)).toBe(true);
+      137 |             expect(response.body.length).toBeGreaterThan(0);
+
+      at Object.expect (tests/basic.test.js:134:18)
+      ----
+      at Test._assertStatus (node_modules/supertest/lib/test.js:309:14)
+      at node_modules/supertest/lib/test.js:365:13
+      at Test._assertFunction (node_modules/supertest/lib/test.js:342:13)
+      at Test.assert (node_modules/supertest/lib/test.js:195:23)
+      at localAssert (node_modules/supertest/lib/test.js:138:14)
+      at Server.<anonymous> (node_modules/supertest/lib/test.js:152:11)
+
+  ● 学生教师门户基础测试 › 课程管理测试 › 学生不应该能创建课程
+
+    expected 403 "Forbidden", got 401 "Unauthorized"
+
+      148 |                 .set('Authorization', `Bearer ${studentToken}`)
+      149 |                 .send(courseData)
+    > 150 |                 .expect(403);
+          |                  ^
+      151 |
+      152 |             expect(response.body.message).toBe('Require Teacher Role!');
+      153 |         });
+
+      at Object.expect (tests/basic.test.js:150:18)
+      ----
+      at Test._assertStatus (node_modules/supertest/lib/test.js:309:14)
+      at node_modules/supertest/lib/test.js:365:13
+      at Test._assertFunction (node_modules/supertest/lib/test.js:342:13)
+      at Test.assert (node_modules/supertest/lib/test.js:195:23)
+      at localAssert (node_modules/supertest/lib/test.js:138:14)
+      at Server.<anonymous> (node_modules/supertest/lib/test.js:152:11)
+
+  ● 学生教师门户基础测试 › 选课功能测试 › 学生应该能成功选课
+
+    expect(received).toBeDefined()
+
+    Received: undefined
+
+      156 |     describe('选课功能测试', () => {
+      157 |         test('学生应该能成功选课', async () => {
+    > 158 |             expect(createdCourseId).toBeDefined();
+          |                                     ^
+      159 |             expect(studentToken).toBeDefined();
+      160 |
+      161 |             const response = await request(app)
+
+      at Object.toBeDefined (tests/basic.test.js:158:37)
+
+  ● 学生教师门户基础测试 › 选课功能测试 › 不应该允许重复选课
+
+    expected 400 "Bad Request", got 401 "Unauthorized"
+
+      173 |                 .set('Authorization', `Bearer ${studentToken}`)
+      174 |                 .send({ courseId: createdCourseId })
+    > 175 |                 .expect(400);
+          |                  ^
+      176 |
+      177 |             expect(response.body.message).toBe('Already enrolled in this course!');
+      178 |         });
+
+      at Object.expect (tests/basic.test.js:175:18)
+      ----
+      at Test._assertStatus (node_modules/supertest/lib/test.js:309:14)
+      at node_modules/supertest/lib/test.js:365:13
+      at Test._assertFunction (node_modules/supertest/lib/test.js:342:13)
+      at Test.assert (node_modules/supertest/lib/test.js:195:23)
+      at localAssert (node_modules/supertest/lib/test.js:138:14)
+      at Server.<anonymous> (node_modules/supertest/lib/test.js:152:11)
+
+  ● 学生教师门户基础测试 › 选课功能测试 › 学生应该能查看选课记录
+
+    expected 200 "OK", got 401 "Unauthorized"
+
+      182 |                 .get('/api/enrollments')
+      183 |                 .set('Authorization', `Bearer ${studentToken}`)
+    > 184 |                 .expect(200);
+          |                  ^
+      185 |
+      186 |             expect(Array.isArray(response.body)).toBe(true);
+      187 |             expect(response.body.length).toBeGreaterThan(0);
+
+      at Object.expect (tests/basic.test.js:184:18)
+      ----
+      at Test._assertStatus (node_modules/supertest/lib/test.js:309:14)
+      at node_modules/supertest/lib/test.js:365:13
+      at Test._assertFunction (node_modules/supertest/lib/test.js:342:13)
+      at Test.assert (node_modules/supertest/lib/test.js:195:23)
+      at localAssert (node_modules/supertest/lib/test.js:138:14)
+      at Server.<anonymous> (node_modules/supertest/lib/test.js:152:11)
+
+ FAIL  tests/integration/api.test.js
+  ● Console
+
+    console.log
+      测试数据库连接成功
+
+      at Object.log (tests/setup.js:22:17)
+
+    console.log
+      测试环境清理完成
+
+      at Object.log (tests/setup.js:35:17)
+
+    console.error
+      Error: getaddrinfo ENOTFOUND mysql
+          at PromisePool.execute (E:\test_environment\applications\nodejs-app\node_modules\mysql2\lib\promise\pool.js:54:22)
+          at Object.execute [as query] (E:\test_environment\applications\nodejs-app\backend\db.js:9:43)
+          at query (E:\test_environment\applications\nodejs-app\backend\controllers.js:8:32)
+          at Layer.handleRequest (E:\test_environment\applications\nodejs-app\node_modules\router\lib\layer.js:152:17)
+          at next (E:\test_environment\applications\nodejs-app\node_modules\router\lib\route.js:157:13)
+          at Route.dispatch (E:\test_environment\applications\nodejs-app\node_modules\router\lib\route.js:117:3)
+          at handle (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:435:11)
+          at Layer.handleRequest (E:\test_environment\applications\nodejs-app\node_modules\router\lib\layer.js:152:17)
+          at E:\test_environment\applications\nodejs-app\node_modules\router\index.js:295:15
+          at processParams (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:582:12)
+          at next (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:291:5)
+          at Function.handle (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:186:3)
+          at router (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:60:12)
+          at Layer.handleRequest (E:\test_environment\applications\nodejs-app\node_modules\router\lib\layer.js:152:17)
+          at trimPrefix (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:342:13)
+          at E:\test_environment\applications\nodejs-app\node_modules\router\index.js:297:9
+          at processParams (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:582:12)
+          at next (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:291:5)
+          at serveStatic (E:\test_environment\applications\nodejs-app\node_modules\serve-static\index.js:74:16)
+          at Layer.handleRequest (E:\test_environment\applications\nodejs-app\node_modules\router\lib\layer.js:152:17)
+          at trimPrefix (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:342:13)
+          at E:\test_environment\applications\nodejs-app\node_modules\router\index.js:297:9
+          at processParams (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:582:12)
+          at next (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:291:5)
+          at urlencodedParser (E:\test_environment\applications\nodejs-app\node_modules\body-parser\lib\types\urlencoded.js:57:7)
+          at Layer.handleRequest (E:\test_environment\applications\nodejs-app\node_modules\router\lib\layer.js:152:17)
+          at trimPrefix (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:342:13)
+          at E:\test_environment\applications\nodejs-app\node_modules\router\index.js:297:9
+          at processParams (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:582:12)
+          at next (E:\test_environment\applications\nodejs-app\node_modules\router\index.js:291:5)
+          at E:\test_environment\applications\nodejs-app\node_modules\body-parser\lib\read.js:132:5
+          at AsyncResource.runInAsyncScope (node:async_hooks:211:14)
+          at invokeCallback (E:\test_environment\applications\nodejs-app\node_modules\raw-body\index.js:238:16)
+          at done (E:\test_environment\applications\nodejs-app\node_modules\raw-body\index.js:227:7)
+          at IncomingMessage.onEnd (E:\test_environment\applications\nodejs-app\node_modules\raw-body\index.js:287:7)
+          at IncomingMessage.emit (node:events:518:28)
+          at endReadableNT (node:internal/streams/readable:1698:12)
+          at processTicksAndRejections (node:internal/process/task_queues:90:21) {
+        code: 'ENOTFOUND',
+        errno: -3008,
+        sql: undefined,
+        sqlState: undefined,
+        sqlMessage: undefined
+      }
+
+      20 |         res.status(201).send({ message: 'User registered successfully!' });
+      21 |     } catch (error) {
+    > 22 |         console.error(error);
+         |                 ^
+      23 |         res.status(500).send({ message: 'Server error' });
+      24 |     }
+      25 | }
+
+      at error (backend/controllers.js:22:17)
+
+    console.log
+      测试数据库连接已关闭
+
+      at Object.log (tests/setup.js:57:21)
+
+  ● API集成测试 › 用户认证API › POST /api/register - 应该成功注册新用户
+
+    expected 201 "Created", got 500 "Internal Server Error"
+
+      14 |             .post('/api/register')
+      15 |             .send(studentUser)
+    > 16 |             .expect(201);
+         |              ^
+      17 |
+      18 |         const studentLogin = await request(app)
+      19 |             .post('/api/login')
+
+      at Object.expect (tests/integration/api.test.js:16:14)
+      ----
+      at Test._assertStatus (node_modules/supertest/lib/test.js:309:14)
+      at node_modules/supertest/lib/test.js:365:13
+      at Test._assertFunction (node_modules/supertest/lib/test.js:342:13)
+      at Test.assert (node_modules/supertest/lib/test.js:195:23)
+      at localAssert (node_modules/supertest/lib/test.js:138:14)
+      at Server.<anonymous> (node_modules/supertest/lib/test.js:152:11)
+
+  ● API集成测试 › 用户认证API › POST /api/register - 应该拒绝重复用户名
+
+    expected 201 "Created", got 500 "Internal Server Error"
+
+      14 |             .post('/api/register')
+      15 |             .send(studentUser)
+    > 16 |             .expect(201);
+         |              ^
+      17 |
+      18 |         const studentLogin = await request(app)
+      19 |             .post('/api/login')
+
+      at Object.expect (tests/integration/api.test.js:16:14)
+      ----
+      at Test._assertStatus (node_modules/supertest/lib/test.js:309:14)
+      at node_modules/supertest/lib/test.js:365:13
+      at Test._assertFunction (node_modules/supertest/lib/test.js:342:13)
+      at Test.assert (node_modules/supertest/lib/test.js:195:23)
+      at localAssert (node_modules/supertest/lib/test.js:138:14)
+      at Server.<anonymous> (node_modules/supertest/lib/test.js:152:11)
+
+  ● API集成测试 › 用户认证API › POST /api/login - 应该成功登录有效用户
+
+    expected 201 "Created", got 500 "Internal Server Error"
+
+      14 |             .post('/api/register')
+      15 |             .send(studentUser)
+    > 16 |             .expect(201);
+         |              ^
+      17 |
+      18 |         const studentLogin = await request(app)
+      19 |             .post('/api/login')
+
+      at Object.expect (tests/integration/api.test.js:16:14)
+      ----
+      at Test._assertStatus (node_modules/supertest/lib/test.js:309:14)
+      at node_modules/supertest/lib/test.js:365:13
+      at Test._assertFunction (node_modules/supertest/lib/test.js:342:13)
+      at Test.assert (node_modules/supertest/lib/test.js:195:23)
+      at localAssert (node_modules/supertest/lib/test.js:138:14)
+      at Server.<anonymous> (node_modules/supertest/lib/test.js:152:11)
+
+  ● API集成测试 › 用户认证API › POST /api/login - 应该拒绝错误密码
+
+    expected 201 "Created", got 500 "Internal Server Error"
+
+      14 |             .post('/api/register')
+      15 |             .send(studentUser)
+    > 16 |             .expect(201);
+         |              ^
+      17 |
+      18 |         const studentLogin = await request(app)
+      19 |             .post('/api/login')
+
+      at Object.expect (tests/integration/api.test.js:16:14)
+      ----
+      at Test._assertStatus (node_modules/supertest/lib/test.js:309:14)
+      at node_modules/supertest/lib/test.js:365:13
+      at Test._assertFunction (node_modules/supertest/lib/test.js:342:13)
+      at Test.assert (node_modules/supertest/lib/test.js:195:23)
+      at localAssert (node_modules/supertest/lib/test.js:138:14)
+      at Server.<anonymous> (node_modules/supertest/lib/test.js:152:11)
+
+  ● API集成测试 › 用户认证API › POST /api/login - 应该拒绝不存在的用户
+
+    expected 201 "Created", got 500 "Internal Server Error"
+
+      14 |             .post('/api/register')
+      15 |             .send(studentUser)
+    > 16 |             .expect(201);
+         |              ^
+      17 |
+      18 |         const studentLogin = await request(app)
+      19 |             .post('/api/login')
+
+      at Object.expect (tests/integration/api.test.js:16:14)
+      ----
+      at Test._assertStatus (node_modules/supertest/lib/test.js:309:14)
+      at node_modules/supertest/lib/test.js:365:13
+      at Test._assertFunction (node_modules/supertest/lib/test.js:342:13)
+      at Test.assert (node_modules/supertest/lib/test.js:195:23)
+      at localAssert (node_modules/supertest/lib/test.js:138:14)
+      at Server.<anonymous> (node_modules/supertest/lib/test.js:152:11)
+
+  ● API集成测试 › 用户信息API › GET /api/user - 应该返回当前用户信息
+
+    expected 201 "Created", got 500 "Internal Server Error"
+
+      14 |             .post('/api/register')
+      15 |             .send(studentUser)
+    > 16 |             .expect(201);
+         |              ^
+      17 |
+      18 |         const studentLogin = await request(app)
+      19 |             .post('/api/login')
+
+      at Object.expect (tests/integration/api.test.js:16:14)
+      ----
+      at Test._assertStatus (node_modules/supertest/lib/test.js:309:14)
+      at node_modules/supertest/lib/test.js:365:13
+      at Test._assertFunction (node_modules/supertest/lib/test.js:342:13)
+      at Test.assert (node_modules/supertest/lib/test.js:195:23)
+      at localAssert (node_modules/supertest/lib/test.js:138:14)
+      at Server.<anonymous> (node_modules/supertest/lib/test.js:152:11)
+
+  ● API集成测试 › 用户信息API › GET /api/user - 应该拒绝未认证请求
+
+    expected 201 "Created", got 500 "Internal Server Error"
+
+      14 |             .post('/api/register')
+      15 |             .send(studentUser)
+    > 16 |             .expect(201);
+         |              ^
+      17 |
+      18 |         const studentLogin = await request(app)
+      19 |             .post('/api/login')
+
+      at Object.expect (tests/integration/api.test.js:16:14)
+      ----
+      at Test._assertStatus (node_modules/supertest/lib/test.js:309:14)
+      at node_modules/supertest/lib/test.js:365:13
+      at Test._assertFunction (node_modules/supertest/lib/test.js:342:13)
+      at Test.assert (node_modules/supertest/lib/test.js:195:23)
+      at localAssert (node_modules/supertest/lib/test.js:138:14)
+      at Server.<anonymous> (node_modules/supertest/lib/test.js:152:11)
+
+  ● API集成测试 › 课程管理API › POST /api/courses - 教师应该能创建课程
+
+    expected 201 "Created", got 500 "Internal Server Error"
+
+      14 |             .post('/api/register')
+      15 |             .send(studentUser)
+    > 16 |             .expect(201);
+         |              ^
+      17 |
+      18 |         const studentLogin = await request(app)
+      19 |             .post('/api/login')
+
+      at Object.expect (tests/integration/api.test.js:16:14)
+      ----
+      at Test._assertStatus (node_modules/supertest/lib/test.js:309:14)
+      at node_modules/supertest/lib/test.js:365:13
+      at Test._assertFunction (node_modules/supertest/lib/test.js:342:13)
+      at Test.assert (node_modules/supertest/lib/test.js:195:23)
+      at localAssert (node_modules/supertest/lib/test.js:138:14)
+      at Server.<anonymous> (node_modules/supertest/lib/test.js:152:11)
+
+  ● API集成测试 › 课程管理API › POST /api/courses - 学生不应该能创建课程
+
+    expected 201 "Created", got 500 "Internal Server Error"
+
+      14 |             .post('/api/register')
+      15 |             .send(studentUser)
+    > 16 |             .expect(201);
+         |              ^
+      17 |
+      18 |         const studentLogin = await request(app)
+      19 |             .post('/api/login')
+
+      at Object.expect (tests/integration/api.test.js:16:14)
+      ----
+      at Test._assertStatus (node_modules/supertest/lib/test.js:309:14)
+      at node_modules/supertest/lib/test.js:365:13
+      at Test._assertFunction (node_modules/supertest/lib/test.js:342:13)
+      at Test.assert (node_modules/supertest/lib/test.js:195:23)
+      at localAssert (node_modules/supertest/lib/test.js:138:14)
+      at Server.<anonymous> (node_modules/supertest/lib/test.js:152:11)
+
+  ● API集成测试 › 课程管理API › GET /api/courses - 应该返回课程列表
+
+    expected 201 "Created", got 500 "Internal Server Error"
+
+      14 |             .post('/api/register')
+      15 |             .send(studentUser)
+    > 16 |             .expect(201);
+         |              ^
+      17 |
+      18 |         const studentLogin = await request(app)
+      19 |             .post('/api/login')
+
+      at Object.expect (tests/integration/api.test.js:16:14)
+      ----
+      at Test._assertStatus (node_modules/supertest/lib/test.js:309:14)
+      at node_modules/supertest/lib/test.js:365:13
+      at Test._assertFunction (node_modules/supertest/lib/test.js:342:13)
+      at Test.assert (node_modules/supertest/lib/test.js:195:23)
+      at localAssert (node_modules/supertest/lib/test.js:138:14)
+      at Server.<anonymous> (node_modules/supertest/lib/test.js:152:11)
+
+  ● API集成测试 › 课程管理API › GET /api/courses/:id - 应该返回单个课程信息
+
+    expected 201 "Created", got 500 "Internal Server Error"
+
+      14 |             .post('/api/register')
+      15 |             .send(studentUser)
+    > 16 |             .expect(201);
+         |              ^
+      17 |
+      18 |         const studentLogin = await request(app)
+      19 |             .post('/api/login')
+
+      at Object.expect (tests/integration/api.test.js:16:14)
+      ----
+      at Test._assertStatus (node_modules/supertest/lib/test.js:309:14)
+      at node_modules/supertest/lib/test.js:365:13
+      at Test._assertFunction (node_modules/supertest/lib/test.js:342:13)
+      at Test.assert (node_modules/supertest/lib/test.js:195:23)
+      at localAssert (node_modules/supertest/lib/test.js:138:14)
+      at Server.<anonymous> (node_modules/supertest/lib/test.js:152:11)
+
+  ● API集成测试 › 选课功能API › POST /api/enroll - 学生应该能选课
+
+    expected 201 "Created", got 500 "Internal Server Error"
+
+      14 |             .post('/api/register')
+      15 |             .send(studentUser)
+    > 16 |             .expect(201);
+         |              ^
+      17 |
+      18 |         const studentLogin = await request(app)
+      19 |             .post('/api/login')
+
+      at Object.expect (tests/integration/api.test.js:16:14)
+      ----
+      at Test._assertStatus (node_modules/supertest/lib/test.js:309:14)
+      at node_modules/supertest/lib/test.js:365:13
+      at Test._assertFunction (node_modules/supertest/lib/test.js:342:13)
+      at Test.assert (node_modules/supertest/lib/test.js:195:23)
+      at localAssert (node_modules/supertest/lib/test.js:138:14)
+      at Server.<anonymous> (node_modules/supertest/lib/test.js:152:11)
+
+  ● API集成测试 › 选课功能API › POST /api/enroll - 不应该允许重复选课
+
+    expected 201 "Created", got 500 "Internal Server Error"
+
+      14 |             .post('/api/register')
+      15 |             .send(studentUser)
+    > 16 |             .expect(201);
+         |              ^
+      17 |
+      18 |         const studentLogin = await request(app)
+      19 |             .post('/api/login')
+
+      at Object.expect (tests/integration/api.test.js:16:14)
+      ----
+      at Test._assertStatus (node_modules/supertest/lib/test.js:309:14)
+      at node_modules/supertest/lib/test.js:365:13
+      at Test._assertFunction (node_modules/supertest/lib/test.js:342:13)
+      at Test.assert (node_modules/supertest/lib/test.js:195:23)
+      at localAssert (node_modules/supertest/lib/test.js:138:14)
+      at Server.<anonymous> (node_modules/supertest/lib/test.js:152:11)
+
+  ● API集成测试 › 选课功能API › GET /api/enrollments - 学生应该能查看自己的选课
+
+    expected 201 "Created", got 500 "Internal Server Error"
+
+      14 |             .post('/api/register')
+      15 |             .send(studentUser)
+    > 16 |             .expect(201);
+         |              ^
+      17 |
+      18 |         const studentLogin = await request(app)
+      19 |             .post('/api/login')
+
+      at Object.expect (tests/integration/api.test.js:16:14)
+      ----
+      at Test._assertStatus (node_modules/supertest/lib/test.js:309:14)
+      at node_modules/supertest/lib/test.js:365:13
+      at Test._assertFunction (node_modules/supertest/lib/test.js:342:13)
+      at Test.assert (node_modules/supertest/lib/test.js:195:23)
+      at localAssert (node_modules/supertest/lib/test.js:138:14)
+      at Server.<anonymous> (node_modules/supertest/lib/test.js:152:11)
+
+  ● API集成测试 › 选课功能API › GET /api/enrollments - 教师应该能查看课程选课情况
+
+    expected 201 "Created", got 500 "Internal Server Error"
+
+      14 |             .post('/api/register')
+      15 |             .send(studentUser)
+    > 16 |             .expect(201);
+         |              ^
+      17 |
+      18 |         const studentLogin = await request(app)
+      19 |             .post('/api/login')
+
+      at Object.expect (tests/integration/api.test.js:16:14)
+      ----
+      at Test._assertStatus (node_modules/supertest/lib/test.js:309:14)
+      at node_modules/supertest/lib/test.js:365:13
+      at Test._assertFunction (node_modules/supertest/lib/test.js:342:13)
+      at Test.assert (node_modules/supertest/lib/test.js:195:23)
+      at localAssert (node_modules/supertest/lib/test.js:138:14)
+      at Server.<anonymous> (node_modules/supertest/lib/test.js:152:11)
+
+  ● API集成测试 › 错误处理 › 应该正确处理不存在的路由
+
+    expected 201 "Created", got 500 "Internal Server Error"
+
+      14 |             .post('/api/register')
+      15 |             .send(studentUser)
+    > 16 |             .expect(201);
+         |              ^
+      17 |
+      18 |         const studentLogin = await request(app)
+      19 |             .post('/api/login')
+
+      at Object.expect (tests/integration/api.test.js:16:14)
+      ----
+      at Test._assertStatus (node_modules/supertest/lib/test.js:309:14)
+      at node_modules/supertest/lib/test.js:365:13
+      at Test._assertFunction (node_modules/supertest/lib/test.js:342:13)
+      at Test.assert (node_modules/supertest/lib/test.js:195:23)
+      at localAssert (node_modules/supertest/lib/test.js:138:14)
+      at Server.<anonymous> (node_modules/supertest/lib/test.js:152:11)
+
+  ● API集成测试 › 错误处理 › 应该正确处理无效的JSON数据
+
+    expected 201 "Created", got 500 "Internal Server Error"
+
+      14 |             .post('/api/register')
+      15 |             .send(studentUser)
+    > 16 |             .expect(201);
+         |              ^
+      17 |
+      18 |         const studentLogin = await request(app)
+      19 |             .post('/api/login')
+
+      at Object.expect (tests/integration/api.test.js:16:14)
+      ----
+      at Test._assertStatus (node_modules/supertest/lib/test.js:309:14)
+      at node_modules/supertest/lib/test.js:365:13
+      at Test._assertFunction (node_modules/supertest/lib/test.js:342:13)
+      at Test.assert (node_modules/supertest/lib/test.js:195:23)
+      at localAssert (node_modules/supertest/lib/test.js:138:14)
+      at Server.<anonymous> (node_modules/supertest/lib/test.js:152:11)
+
+ PASS  tests/unit/auth.test.js
+  ● Console
+
+    console.log
+      测试数据库连接成功
+
+      at Object.log (tests/setup.js:22:17)
+
+    console.log
+      测试环境清理完成
+
+      at Object.log (tests/setup.js:35:17)
+
+    console.log
+      测试数据库连接已关闭
+
+      at Object.log (tests/setup.js:57:21)
+
+ FAIL  tests/e2e/frontend.test.js
+  ● Test suite failed to run
+
+    Cannot find module 'puppeteer' from 'tests/e2e/frontend.test.js'
+
+      1 | // tests/e2e/frontend.test.js - 端到端测试
+    > 2 | const puppeteer = require('puppeteer');
+        |                   ^
+      3 |
+      4 | describe('前端端到端测试', () => {
+      5 |     let browser;
+
+      at Resolver._throwModNotFoundError (node_modules/jest-resolve/build/resolver.js:427:11)
+      at Object.require (tests/e2e/frontend.test.js:2:19)
+
+Test Suites: 3 failed, 1 passed, 4 total
+Tests:       26 failed, 13 passed, 39 total
+Snapshots:   0 total
+Time:        14.259 s
+Ran all test suites.
+E:\test_environment\applications\nodejs-app>
